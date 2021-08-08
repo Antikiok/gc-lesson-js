@@ -7,14 +7,11 @@ let result = 0;
 for (let start = 4; start <= end; start += 1) {
   if (start % 5 === 0) {
     console.log(start);
-  }
-  if (start % 2 === 0 && start % 4 !== 0) {
+  } else if (start % 2 === 0 && start % 4 !== 0) {
     result += start;
-  }
-  if (start % 3 === 0) {
+  } else if (start % 3 === 0) {
     result -= start;
-  }
-  if (start % 4 === 0) {
+  } else if (start % 4 === 0) {
     result *= start;
   }
 }
