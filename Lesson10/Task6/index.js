@@ -1,4 +1,4 @@
-const isNumber = (num) => {
+const isNumber = num => {
   for (let i = 0; i < num.length; i += 1) {
     if (!Number.isInteger(num[i])) {
       return null;
@@ -11,9 +11,10 @@ const getRandomNumbers = (length, from, to) => {
   const arr = [];
 
   for (let i = 0; i < length; i += 1) {
-    const number = Number((Math.random() * (to - from) + from).toFixed());
+    const number = Number(Math.random() * (to - from) + from).toFixed();
     arr.push(number);
   }
+  // return arr;
   return isNumber(arr);
 };
 
@@ -23,9 +24,7 @@ const getRandomNumbers = (length, from, to) => {
 //   const arr = [];
 
 //   for (let i = 0; i < length; i += 1) {
-//     if (to - from < 1) {
-//       return null;
-//     }
+//
 //     const number = Number((Math.random() * (to - from) + from).toFixed());
 
 //     arr.push(number);
