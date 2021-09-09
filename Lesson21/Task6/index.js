@@ -1,4 +1,4 @@
-export const setButton = buttonText => {
+const setButton = buttonText => {
   if (typeof buttonText !== 'string') {
     return alert('Вы ввели не строку');
   }
