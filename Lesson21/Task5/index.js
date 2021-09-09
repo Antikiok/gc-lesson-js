@@ -1,6 +1,6 @@
 const setTitle = text => {
   if (typeof text !== 'string') {
-    return alert('Вы ввели не строку');
+    return 'Вы ввели не строку';
   }
   const title = document.querySelector('.title');
   title.textContent = text;
