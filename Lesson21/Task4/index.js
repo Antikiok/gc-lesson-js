@@ -4,4 +4,4 @@ export const getDescription = () => document.querySelector('.about').innerText;
 
 export const getPlans = () => document.querySelector('.plans').innerHTML;
 
-export const getGoal = () => document.querySelector('.goal').outherHTML;
+export const getGoal = () => document.querySelector('.goal').outerHTML;
