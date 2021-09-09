@@ -1,5 +1,4 @@
 const listElem = document.querySelector('.list');
-
 const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
@@ -9,7 +8,7 @@ const tasks = [
 ];
 
 const renderTasks = tasksList => {
-  listElem.innerHTML = '';
+  // listElem.innerHTML = '';
 
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
@@ -18,14 +17,15 @@ const renderTasks = tasksList => {
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
 
-      checkbox.setAttribute('type', 'checkbox');
-      checkbox.setAttribute('data-id', index);
-      checkbox.checked = done;
-
-      checkbox.classList.add('list__item-checkbox');
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
+
+      checkbox.setAttribute('type', 'checkbox');
+      // checkbox.setAttribute('data-id', index);
+      checkbox.checked = done;
+
+      checkbox.classList.add('list__item-checkbox');
 
       listItemElem.append(checkbox, text);
 
@@ -36,6 +36,3 @@ const renderTasks = tasksList => {
 };
 
 renderTasks(tasks);
-
-const createBtnElement = document.querySelector('.create-task-btn');
-const inputElement = document.querySelector('.task-input');
