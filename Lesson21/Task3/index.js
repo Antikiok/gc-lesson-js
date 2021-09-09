@@ -8,7 +8,3 @@ export const getItemsArray = () => {
   console.dir(elementsArray);
   return elementsArray;
 };
-
-// test data
-getItemList();
-getItemsArray();
