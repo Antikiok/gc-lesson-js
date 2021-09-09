@@ -1,5 +1,11 @@
-export const setTitle = () => {
+const setTitle = text => {
+  if (typeof text !== 'string') {
+    return alert('Вы ввели не строку');
+  }
   const title = document.querySelector('.title');
-  title.textContent = 'new title set';
+  title.textContent = text;
   return title;
 };
+
+setTitle('new title set');
+setTitle(null);
