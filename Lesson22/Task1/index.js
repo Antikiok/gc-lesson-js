@@ -55,4 +55,4 @@ const removeHandledsFunc = () => {
 
 clearHandleds.addEventListener('click', buttonClear);
 attachHandleds.addEventListener('click', attachHandledsFunc);
-removeHandleds.removeEventListener('click', removeHandledsFunc);
+removeHandleds.addEventListener('click', removeHandledsFunc);
