@@ -1,15 +1,17 @@
 const oneDate = new Date(Date.UTC(2019, 10, 24, 20, 50, 34, 44));
 const twoDate = new Date(Date.UTC(2019, 1, 22, 17, 52, 18));
+const SEC = 1000;
+const MINUTE = 60 * SEC;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
 
 const getDiff = (startDate, endDate) => {
   const differenceDate = Math.abs(startDate - endDate);
 
-  const days = Math.floor(differenceDate / 86400000);
-  const hours = Math.floor((differenceDate - days * 86400000) / 3600000);
-  const minutes = Math.floor((differenceDate - (days * 86400000 + hours * 3600000)) / 60000);
-  const seconds = Math.floor(
-    (differenceDate - (days * 86400000 + hours * 3600000 + minutes * 60000)) / 1000,
-  );
+  const days = Math.floor(differenceDate / DAY);
+  const hours = Math.floor((differenceDate % DAY) / HOUR);
+  const minutes = Math.floor((differenceDate % HOUR) / MINUTE);
+  const seconds = Math.floor((differenceDate % MINUTE) / SEC);
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 const result = getDiff(oneDate, twoDate);
