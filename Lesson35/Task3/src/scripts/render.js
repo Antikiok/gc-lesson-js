@@ -3,7 +3,7 @@ const userNameElem = document.querySelector('.user__name');
 const userLocationElem = document.querySelector('.user__location');
 const userRepoUrl = document.querySelector('.repo-list');
 
-const defaultAvatar = 'https:/avatars3.githubusercontent.com/u100001';
+const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
 
 userAvatarElem.src = defaultAvatar;
 
