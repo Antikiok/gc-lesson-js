@@ -1,4 +1,4 @@
-const baseUrl = 'https://614f1128b4f6d30017b4846e.mockapi.io/api/v1/tasks';
+const baseUrl = 'https://614ffa90a706cd00179b734a.mockapi.io/users';
 
 const mapTask = tasks => tasks.map(({ id, ...rest }) => ({ ...rest, id }));
 export const getTasksList = () =>
