@@ -1,27 +1,25 @@
-const getRandomNumber = (from, to) => from + Math.random() * (to - from);
+/* eslint-disable prefer-arrow-callback */
+const successRequest = Promise.resolve({ name: 'Tom' });
+// const failRequest1 = Promise.reject(new Error('Something went wrong'));
 
-const request = url =>
-  new Promise(resolve => {
-    const randomDelay = getRandomNumber(1000, 3000);
-    setTimeout(() => {
-      resolve({
-        userData: {
-          name: 'Tom',
-          age: 17,
-        },
-        source: url,
-      });
-    }, randomDelay);
+successRequest
+  .then(function onSuccess1(data) {
+    throw new Error('Error with data');
+  })
+  .catch(function onError1(error) {
+    console.error('onError1', error.message);
   });
 
-const servers = ['https://server.com/us', 'https://server.com/eu', 'https://server.com/au'];
+const failRequest = Promise.reject(new Error('Something went wrong'));
 
-const getUserASAP = userId => {
-  const userUrls = servers.map(serverUrl => `${serverUrl}/users/${userId}`);
-  // console.log(userUrls);
-  const requests = userUrls.map(userUrl => request(userUrl));
-  // console.log(requests);
-  return Promise.race(requests);
-};
-
-getUserASAP('user-id-1').then(res => console.log(res));
+failRequest
+  .catch(function onError2(error) {
+    console.error('onError2', error.message);
+    throw new Error('Server error');
+  })
+  .then(function onSuccess2(data) {
+    console.log('onSuccess2', data);
+  })
+  .catch(function onError3(error) {
+    console.error('onError3', error.message);
+  });
