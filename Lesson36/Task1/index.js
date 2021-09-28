@@ -4,8 +4,7 @@ const getUser = async userId => {
     if (!response.ok) {
       return null;
     }
-    const userData = await response.json();
-    return userData;
+    return await response.json();
   } catch (error) {
     throw new Error('Failed to fetch user');
   }
